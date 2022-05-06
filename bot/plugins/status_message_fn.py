@@ -23,6 +23,7 @@ from bot.localisation import Localisation
 from bot.helper_funcs.display_progress import (
     TimeFormatter,
     humanbytes
+    progress_for_pyrogram
 )
 from bot.helper_funcs.ffmpeg import (
   media_info,
@@ -218,3 +219,22 @@ async def sample_gen(app, message):
   else:
      await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
      os.remove(video_file)
+    
+async def download_my_file(app, message):
+    if message.reply_to_message:
+        d_start = time.time()
+        replyid = message.reply_to_message.message_id
+        msg = await message.reply_to_message.reply_text("Downloading...", parse_mode="markdown")
+        filepath = await app.download_media(
+            message=message.reply_to_message,
+            progress=progress_for_pyrogram,
+            progress_args=(
+              bot,
+              Localisation.DOWNLOAD_START,
+              msg,
+              d_start
+        )
+        savedfilepath = filepath
+        msg.edit(f"Sucessfully Downloaded The File /n ```{savedfilepath}```", parse_mode='markdown')
+    else:
+        await message.reply_to_message.reply_text("Reply To The File Kid", parse_mode="markdown")
