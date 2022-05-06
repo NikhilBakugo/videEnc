@@ -22,7 +22,7 @@ from bot.commands import Command
 from bot.localisation import Localisation
 from bot.helper_funcs.display_progress import (
     TimeFormatter,
-    humanbytes
+    humanbytes,
     progress_for_pyrogram
 )
 from bot.helper_funcs.ffmpeg import (
