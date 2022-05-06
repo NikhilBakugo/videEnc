@@ -30,6 +30,7 @@ from bot.plugins.status_message_fn import (
     upload_log_file,
     upload_dir,
     sample_gen,
+    download_my_file,
     run_subprocess
 )
 
@@ -100,6 +101,10 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["ul", f"ul@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await upload_dir(app, message)
+        
+    @app.on_message(filters.incoming & filters.command(["dl", f"dl@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        await download_my_file(app, message)    
               
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
