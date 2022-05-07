@@ -172,7 +172,7 @@ async def upload_dir(client, message):
                 caption=cmd1,
                 reply_to_message_id=replyid,
         )
-    await xhamster.delete_messages
+    await xhamster.delete()
   else:
      await message.reply_text(f"Directory Not Found ```{cmd1}```", parse_mode="markdown")
         
@@ -237,6 +237,6 @@ async def download_my_file(app, message):
        )
         msg.delete()
         savedfilepath = filepath
-        app.send_message(f"Sucessfully Downloaded The File /n ```{savedfilepath}```", parse_mode='markdown')
+        message.reply_text(f"Sucessfully Downloaded The File /n ```{savedfilepath}```", parse_mode='markdown')
     else:
         await message.reply_to_message.reply_text("Reply To The File Kid", parse_mode="markdown")
