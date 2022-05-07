@@ -235,7 +235,8 @@ async def download_my_file(app, message):
               d_start
          )
        )
+        msg.delete()
         savedfilepath = filepath
-        msg.edit(f"Sucessfully Downloaded The File /n ```{savedfilepath}```", parse_mode='markdown')
+        app.send_message(f"Sucessfully Downloaded The File /n ```{savedfilepath}```", parse_mode='markdown')
     else:
         await message.reply_to_message.reply_text("Reply To The File Kid", parse_mode="markdown")
