@@ -229,7 +229,7 @@ async def download_my_file(app, message):
             message=message.reply_to_message,
             progress=progress_for_pyrogram,
             progress_args=(
-              bot,
+              app,
               Localisation.DOWNLOAD_START,
               msg,
               d_start
