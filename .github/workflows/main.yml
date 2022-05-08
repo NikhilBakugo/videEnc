@@ -31,9 +31,9 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           ENV: ${{ secrets.ENV }}
           SESSION_NAME: ${{ secrets.SESSION_NAME }}
-          LOGZ: ${{ secrets}.LOGZ}}
-          FFMPEG: ${{ secrets}.FFMPEG}}
-          BOT_USERNAME: ${{ secrets}.BOT_USERNAME}}
-          AUTH_USERS: ${{ secrets}.AUTH_USERS}}
+          LOGZ: ${{ secrets.LOGZ}}
+          FFMPEG: ${{ secrets.FFMPEG}}
+          BOT_USERNAME: ${{ secrets.BOT_USERNAME}}
+          AUTH_USERS: ${{ secrets.AUTH_USERS}}
           
           
