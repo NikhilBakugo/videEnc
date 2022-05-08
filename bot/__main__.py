@@ -56,8 +56,6 @@ def ts(milliseconds: int) -> str:
 
 if __name__ == "__main__" :
     
-    if not os.path.isdir(DOWNLOAD_LOCATION):
-        os.makedirs(DOWNLOAD_LOCATION)
         
     app.set_parse_mode("html")
     incoming_start_message_handler = MessageHandler(
