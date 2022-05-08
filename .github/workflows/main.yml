@@ -14,12 +14,21 @@ jobs:
         with:
           python-version: '3.x'
           architecture: 'x64'
-          
+
+      - name: install requirement
+        run: mkdir app
+
+      - name: install requiremen
+        run: cd app
+      
       - name: install requirements
         run: pip install -r requirements.txt
-        
+
       - name: install ffmpeg
         run: sudo apt install ffmpeg
+      
+      - name: install requir
+        run: mkdir downloads
 
       - name: erro404
         timeout-minutes: 350
