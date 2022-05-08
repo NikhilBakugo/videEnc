@@ -1,4 +1,5 @@
 # Hosting 🖥
+This Repo Is Only For Educational Purposes
 
 ### Deploying To Heroku ⚙
 
